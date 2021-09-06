@@ -233,12 +233,11 @@
 												<textarea name="message" id="message" rows="5"></textarea>
 											</div>
 										</div>
-										<!-- <ul class="actions">
-											<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbwcNt9QrZeTxrA4wG5BJFcHXJHfiHvXshGf7m63/exec"></form>
+										<ul class="actions">
 											<li>
 												<a onclick="return check();" class="button submit">Send Message</a>
 											</li>
-										</ul> -->
+										</ul>
 									</form>
 								</section>
 								<section>
@@ -296,5 +295,18 @@
 			<script data-cfasync="false" type="text/javascript" 
 				src="./emailSubmit.js">
 			</script> 
+			<script type="text/javascript">
+				function check() {		
+					alert(document.getElementById("email").value);
+					var email = document.getElementById("email").value;
+					var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+							if(exptext.test(email)==false){
+						//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
+						alert("이 메일형식이 올바르지 않습니다.");
+						document.addjoin.email.focus();
+						return false;
+					}
+				}
+			</script>
 	</body>
 </html>
