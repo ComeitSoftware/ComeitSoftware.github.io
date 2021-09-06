@@ -157,59 +157,6 @@
 					</section>
 
 				<!-- Three -->
-				<script>
-					function check() {
-							var email = document.getElementById("email").value;
-							if (email != "") {
-								var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-								if (exptext.test(email) == false) {
-									//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
-									alert("입력한 메일형식이 올바르지 않습니다.");
-									document.formtag.email.focus();
-									return false;
-								}
-							}
-							return true;
-						}
-				
-				
-					function handleFormSumbit(evnet){
-						console.log(evnet);
-						evnet.preventDefault();
-						var form = event.target;
-						var formData = getFormData(form);
-						var data = formData.data;
-				
-						if(formData.honeypot){
-							return false;
-						}
-				
-						var url = form.action;
-						var xhr = new XMLHttpRequest();
-						xhr.open('POST',url);
-				
-						xhr.setRequestHeader("Content-Type",
-						"aplication/x-www-form-urlencoded");
-				
-						xhr.onreadystatechange = function() {
-							if(xhr.readyState === 4 && xhr.status === 200)
-							{
-								form.reset();
-								var formElements = form.querySelector(".form-elements")
-								if(formElements){
-									formElements.style.display = "none";
-								
-								}
-								var thankYouMessage = form.querySelector(".thankyou_message");
-								if(thankYouMessage){
-									thankYouMessage.style.display = "block";
-								}
-				
-							}
-						}
-					}
-					</script>
-
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>함께 프로젝트를 진행하고 싶어요!</h2>
@@ -250,7 +197,7 @@
 										</li>
 										<li>
 											<h3>Email</h3>
-											<a href="comeitsoftware@gmail.com">comeitsoftware@gmail.com</a>
+											<a href="#">comeitsoftware@gmail.com</a>
 										</li>
 										<li>
 											<h3>Phone</h3>
