@@ -164,7 +164,7 @@
 							<div class="split style1">
 								<section>
 									<!-- <form method="post" action="#"> -->
-									<form class="gform" method="POST" data-email="comeitsoftware@naver.com" action="https://script.google.com/macros/s/AKfycbzhsT7PoKOdUC2xVnDEY5o8fgDA2eKewtqbl0awJw/exec">
+									<form class="gform" id='EmailForm' method="POST" data-email="comeitsoftware@naver.com" action="https://script.google.com/macros/s/AKfycbzhsT7PoKOdUC2xVnDEY5o8fgDA2eKewtqbl0awJw/exec">
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Name</label>
@@ -239,15 +239,17 @@
 			<script src="assets/js/main.js"></script>
 
 			<script type="text/javascript">
-				function check() {		
-					// alert(document.getElementById("email").value);
+				function check() {
+					document.getElementsById("EmailForm").action = "https://script.google.com/macros/s/AKfycbzhsT7PoKOdUC2xVnDEY5o8fgDA2eKewtqbl0awJw/exec";
 					var email = document.getElementById("email").value;
-					var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-							if(exptext.test(email)==false){
-						//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
-						alert("이 메일형식이 올바르지 않습니다.");
-						document.addjoin.email.focus();
-						return false;
+					if (email != "") {
+						var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+						if (exptext.test(email) == false) {
+							//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
+							alert("입력한 메일형식이 올바르지 않습니다.");
+							document.formtag.email.focus();
+							document.getElementById("EmailForm").action = " ";
+						}
 					}
 				}
 			</script>
