@@ -217,7 +217,9 @@
 							</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<!-- <form method="post" action="#"> -->
+									<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbwcNt9QrZeTxrA4wG5BJFcHXJHfiHvXshGf7m63/exec"></form>
+
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Name</label>
@@ -232,12 +234,12 @@
 												<textarea name="message" id="message" rows="5"></textarea>
 											</div>
 										</div>
-										<ul class="actions">
+										<!-- <ul class="actions">
 											<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbwcNt9QrZeTxrA4wG5BJFcHXJHfiHvXshGf7m63/exec"></form>
 											<li>
 												<a onclick="return check();" class="button submit">Send Message</a>
 											</li>
-										</ul>
+										</ul> -->
 									</form>
 								</section>
 								<section>
@@ -292,5 +294,8 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script data-cfasync="false" type="text/javascript" 
+				src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js">
+			</script> 
 	</body>
 </html>
