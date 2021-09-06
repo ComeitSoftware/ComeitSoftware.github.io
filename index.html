@@ -164,24 +164,28 @@
 							<div class="split style1">
 								<section>
 									<!-- <form method="post" action="#"> -->
-									<form class="gform" id='EmailForm' method="POST" data-email="comeitsoftware@naver.com" action="https://script.google.com/macros/s/AKfycbzhsT7PoKOdUC2xVnDEY5o8fgDA2eKewtqbl0awJw/exec">
+									<form class="gform" id='AAA' method="POST" data-email="comeitsoftware@naver.com" action = "https://script.google.com/macros/s/AKfycbzhsT7PoKOdUC2xVnDEY5o8fgDA2eKewtqbl0awJw/exec">
 										<div class="fields">
 											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
+												<label for="name">이름</label>
+												<input type="text" name="name" id="name" required/>
 											</div>
 											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
+												<label for="email">이메일</label>
+												<input type="email" name="email" id="email" required/>
+											</div>
+											<div class="field half">
+												<label for="tel">전화번호</label>
+												<input type="tel" name="tel" id="tel" required/>
 											</div>
 											<div class="field">
 												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
+												<textarea name="message" id="message" rows="5" required></textarea>
 											</div>
 										</div>
 										<ul class="actions">
 											<li>
-												<a onclick=check() class="button submit">Send Message</a>
+												<button onclick=check()>Send Message</button>
 											</li>
 										</ul>
 									</form>
@@ -240,7 +244,6 @@
 
 			<script type="text/javascript">
 				function check() {
-					document.getElementsById("EmailForm").action = "https://script.google.com/macros/s/AKfycbzhsT7PoKOdUC2xVnDEY5o8fgDA2eKewtqbl0awJw/exec";
 					var email = document.getElementById("email").value;
 					if (email != "") {
 						var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
@@ -248,7 +251,11 @@
 							//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
 							alert("입력한 메일형식이 올바르지 않습니다.");
 							document.formtag.email.focus();
-							document.getElementById("EmailForm").action = " ";
+							document.getElementsByClassName("gform").action = " ";
+						}
+						else
+						{
+							alert('전송되었습니다.')
 						}
 					}
 				}
