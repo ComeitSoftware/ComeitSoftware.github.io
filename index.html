@@ -121,7 +121,7 @@
 							<div class="features">
 								<section>
 									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
+									<h3>소스코드 제공</h3>
 									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
 								</section>
 								<section>
@@ -164,7 +164,7 @@
 							<div class="split style1">
 								<section>
 									<!-- <form method="post" action="#"> -->
-									<form class="gform" method="POST" data-email="comeitsoftware@naver.com" action = "https://script.google.com/macros/s/AKfycbzhsT7PoKOdUC2xVnDEY5o8fgDA2eKewtqbl0awJw/exec">
+									<form class="gform" method="POST" data-email="comeitsoftware@naver.com" action="https://script.google.com/macros/s/AKfycbzhsT7PoKOdUC2xVnDEY5o8fgDA2eKewtqbl0awJw/exec">
 										<div class="fields">
 											<div class="field half">
 												<label for="name">이름</label>
@@ -174,9 +174,16 @@
 												<label for="email">이메일</label>
 												<input type="email" name="email" id="email" required/>
 											</div>
-											<div class="field half">
-												<label for="tel">전화번호</label>
-												<input type="text" name="tel" id="tel" required/>
+											<div class="field">
+												<label for="category">개발 분야</label>
+												<select name="category" id="category" required>
+													<option value="">- 카테고리 -</option>
+													<option value="Android Application">안드로이드 어플리케이션</option>
+													<option value="IOS Application">IOS 어플리케이션</option>
+													<option value="Game Development">게임 개발</option>
+													<option value="Macro Development">매크로 개발</option>
+													<option value="Crawlling Bot Development">크롤링 봇 개발</option>
+												</select>
 											</div>
 											<div class="field">
 												<label for="message">프로젝트 내용</label>
@@ -249,7 +256,22 @@
 						}
 						else
 						{
-							alert('전송되었습니다.')
+							if (document.getElementById("name").value == "")
+							{
+								document.getElementsByClassName("gform").action = " ";
+							}
+							else if (document.getElementById("category").value == "")
+							{
+								document.getElementsByClassName("gform").action = " ";
+							}
+							else if (document.getElementById("message").value == "")
+							{
+								document.getElementsByClassName("gform").action = " ";
+							}
+							else
+							{
+								alert('감사합니다.\n빠른 시일 내에 답변드리겠습니다.')
+							}
 						}
 					}
 				}
